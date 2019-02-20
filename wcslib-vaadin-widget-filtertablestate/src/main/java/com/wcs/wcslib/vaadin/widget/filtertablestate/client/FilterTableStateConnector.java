@@ -32,7 +32,7 @@ import com.vaadin.client.ui.VVerticalLayout;
 import com.vaadin.shared.ui.Connect;
 import com.google.gwt.query.client.GQuery;
 import com.google.gwt.query.client.Function;
-import static com.google.gwt.query.client.GQuery.*;
+import static com.google.gwt.query.client.GQuery.$;
 import com.google.gwt.user.client.Event;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.extension.FilterTableState;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.shared.ClickFunction;

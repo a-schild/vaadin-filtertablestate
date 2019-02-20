@@ -19,6 +19,7 @@
 
     <properties>
         <filteringtable.version>1.0.1.v8</filteringtable.version>
+        <gwtquery.version>1.5-beta1</gwtquery.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -42,7 +43,7 @@
         <dependency>
             <groupId>com.googlecode.gwtquery</groupId>
             <artifactId>gwtquery</artifactId>
-            <version>1.3.3</version>
+            <version>${gwtquery.version}</version>
         </dependency>
     </dependencies>
 

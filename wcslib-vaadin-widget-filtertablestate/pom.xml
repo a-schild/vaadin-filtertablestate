@@ -17,6 +17,7 @@
     <properties>
         <version.vaadin>8.7.0</version.vaadin>
         <filteringtable.version>1.0.1.v8</filteringtable.version>
+        <gwtquery.version>1.5-beta1</gwtquery.version>
         <widgetset>com.wcs.wcslib.vaadin.widget.filtertablestate.FilterTableStateWidgetSet</widgetset>
     </properties>
 
@@ -73,7 +74,7 @@
         <dependency>
             <groupId>com.googlecode.gwtquery</groupId>
             <artifactId>gwtquery</artifactId>
-            <version>1.3.3</version>
+            <version>${gwtquery.version}</version>
         </dependency>
     </dependencies>
 
