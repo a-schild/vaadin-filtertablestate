@@ -16,18 +16,19 @@
 package com.wcs.wcslib.vaadin.widget.filtertablestate;
 
 import com.vaadin.annotations.Theme;
-import com.vaadin.data.Container;
-import com.vaadin.data.util.IndexedContainer;
-import com.vaadin.data.util.filter.Compare;
+import com.vaadin.v7.data.Container;
+import com.vaadin.v7.data.util.IndexedContainer;
+import com.vaadin.v7.data.util.filter.Compare;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.shared.ui.datefield.Resolution;
-import com.vaadin.ui.AbstractField;
-import com.vaadin.ui.Field;
+
+import com.vaadin.v7.ui.AbstractField;
+import com.vaadin.v7.ui.Field;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.v7.shared.ui.datefield.Resolution;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.api.FilterTableStateHandler;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.api.model.ColumnInfo;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.api.model.FilterTableStateProfile;
@@ -60,10 +61,10 @@ public class WidgetTestApplication extends UI {
         SINGLE_SELECT(0, true, false, "Single selection"),
         MULTI_SELECT(1, true, true, "Multi selection"),
         DISABLE_SELECT(2, false, false, "Disable selection");
-        private int code;
-        private boolean selectable;
-        private boolean multiselect;
-        private String label;
+        private final int code;
+        private final boolean selectable;
+        private final boolean multiselect;
+        private final String label;
 
         private FunctionCode(int code, boolean selectable, boolean multiselect, String label) {
             this.code = code;
@@ -228,12 +229,19 @@ public class WidgetTestApplication extends UI {
             /* Set state property */
             int rndInt = random.nextInt(4);
             State stateToSet = State.CREATED;
-            if (rndInt == 0) {
-                stateToSet = State.PROCESSING;
-            } else if (rndInt == 1) {
-                stateToSet = State.PROCESSED;
-            } else if (rndInt == 2) {
-                stateToSet = State.FINISHED;
+            switch (rndInt)
+            {
+                case 0:
+                    stateToSet = State.PROCESSING;
+                    break;
+                case 1:
+                    stateToSet = State.PROCESSED;
+                    break;
+                case 2:
+                    stateToSet = State.FINISHED;
+                    break;
+                default:
+                    break;
             }
             cont.getContainerProperty(i, "state").setValue(stateToSet);
             /* Set date property */
@@ -407,6 +415,11 @@ public class WidgetTestApplication extends UI {
         @Override
         public boolean usePopupForNumericProperty(Object propertyId) {
             return false;
+        }
+
+        @Override
+        public String getNumberValidationErrorMessage() {
+            return "Invalid number";
         }
     }
 }

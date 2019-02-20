@@ -30,19 +30,18 @@ import com.vaadin.client.ui.VOverlay;
 import com.vaadin.client.ui.VTextField;
 import com.vaadin.client.ui.VVerticalLayout;
 import com.vaadin.shared.ui.Connect;
-import org.tepi.filtertable.gwt.client.ui.FilterTableConnector;
-import org.tepi.filtertable.gwt.client.ui.VFilterTable;
 import com.google.gwt.query.client.GQuery;
 import com.google.gwt.query.client.Function;
 import static com.google.gwt.query.client.GQuery.*;
 import com.google.gwt.user.client.Event;
-import com.vaadin.client.VConsole;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.extension.FilterTableState;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.shared.ClickFunction;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.shared.FilterTableStateSharedState;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.shared.FilterTableStateRpc;
 import com.wcs.wcslib.vaadin.widget.filtertablestate.shared.FilterTableStateSharedState.FilterTableStateMessageKey;
 import static com.wcs.wcslib.vaadin.widget.filtertablestate.shared.FilterTableStateSharedState.FilterTableStateMessageKey.*;
+import org.tepi.filtertable.client.ui.FilterTableConnector;
+import org.tepi.filtertable.client.ui.VFilterTable;
 
 /**
  *
@@ -131,7 +130,7 @@ public class FilterTableStateConnector extends AbstractExtensionConnector implem
     }
 
     private void createPopupLayout() {
-        overlay = new VOverlay(true, false, true);
+        overlay = new VOverlay(true, false);
         overlay.setOwner(filterTable);
         layout = new VVerticalLayout();
         layout.setStyleName(LAYOUT_STYLE);
